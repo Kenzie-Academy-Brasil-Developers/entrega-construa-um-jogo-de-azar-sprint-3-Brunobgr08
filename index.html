@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel e Tesoura</title>
+
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/normalize.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+
+</head>
+<body class="principal">
+    <header class="header">
+        <div class="header__img"></div>
+        <h1 class="header header__h1">Pedra Papel Tesoura</h1>
+    </header>
+    <main class="main">
+        <section class="main__game">
+            <hr>
+            <div class="divHuman">
+                <div class="divHuman divHuman__header">
+                    <h3 class="divHuman divHuman__h3">Escolha uma opção abaixo :</h3>
+                </div>
+                <div class="containerImagens">
+                    <div class="containerImagens containerImagens__pedra" id="pedra"></div>
+                    <div class="containerImagens containerImagens__papel" id="papel"></div>
+                    <div class="containerImagens containerImagens__tesoura" id="tesoura"></div>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <hr>
+            <div class="divMachine">
+                <div class ="divMachine__header">
+                    <h3 class="divMachine__h3">O computador está jogando...</h3>
+                </div>
+                <div class="containerImagensMac">
+                    <!-- <div  class="containerImagensMac1"></div>
+                    <div  class="containerImagensMac2"></div>
+                    <div  class="containerImagensMac3"></div> -->
+                </div>
+            </div>
+        </section>
+        <div class="main__winner">
+            <hr>
+            <h3 class="winner__h3" id="currentWinner">teste</h3>
+            <button class="btnReset" id="resetGame">Jogar Novamente</button>
+        </div>
+        <div class="main__playerX">
+            <h4>Vitórias: Jogador</h4>
+            <p id="countPlayerX"></p>
+        </div>
+        <div class="main__playerMachine">
+            <h4>Vitórias: Máquina</h4>
+            <p id="countMachine"></p>
+        </div>
+    </main>    
+</body>
+</html>
