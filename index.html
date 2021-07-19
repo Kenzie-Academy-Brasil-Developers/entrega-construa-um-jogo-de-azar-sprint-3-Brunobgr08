@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra, Papel e Tesoura</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Otomanopee+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/normalize.css"/>
     <link rel="stylesheet" href="./assets/css/style.css"/>
@@ -21,42 +22,37 @@
             <hr>
             <div class="divHuman">
                 <div class="divHuman divHuman__header">
-                    <h3 class="divHuman divHuman__h3">Escolha uma opção abaixo :</h3>
+                    <h3 class="divHuman divHuman__h3" id="human__h3">Escolha uma opção abaixo :</h3>
                 </div>
-                <div class="containerImagens">
-                    <div class="containerImagens containerImagens__pedra" id="pedra"></div>
-                    <div class="containerImagens containerImagens__papel" id="papel"></div>
-                    <div class="containerImagens containerImagens__tesoura" id="tesoura"></div>
-                </div>
-                <div>
-                    <p></p>
+                <div class="containerImagens" id="containerImagens">
+                    <div class="containerImagens containerImagens__pedra" id="Pedra"></div>
+                    <div class="containerImagens containerImagens__papel" id="Papel"></div>
+                    <div class="containerImagens containerImagens__tesoura" id="Tesoura"></div>
                 </div>
             </div>
             <hr>
-            <div class="divMachine">
+            <div class="divMachine" id="divMachine">
                 <div class ="divMachine__header">
-                    <h3 class="divMachine__h3">O computador está jogando...</h3>
+                    <h3 class="divMachine__h3" id="divMachine__h3"></h3>
                 </div>
-                <div class="containerImagensMac">
-                    <!-- <div  class="containerImagensMac1"></div>
-                    <div  class="containerImagensMac2"></div>
-                    <div  class="containerImagensMac3"></div> -->
+                <div class="containerImagensMac" id="ctnImgMac">
                 </div>
             </div>
         </section>
         <div class="main__winner">
             <hr>
-            <h3 class="winner__h3" id="currentWinner">teste</h3>
-            <button class="btnReset" id="resetGame">Jogar Novamente</button>
+            <h3 class="winner__h3" id="currentWinner"></h3>
+            <button class="btnReset" id="resetGame" disabled>Jogar Novamente</button>
         </div>
         <div class="main__playerX">
-            <h4>Vitórias: Jogador</h4>
+            <h4 id="jogadorX"></h4>
             <p id="countPlayerX"></p>
         </div>
         <div class="main__playerMachine">
             <h4>Vitórias: Máquina</h4>
             <p id="countMachine"></p>
         </div>
-    </main>    
+    </main>
+    <script src="./assets/script/script.js"></script>    
 </body>
 </html>
