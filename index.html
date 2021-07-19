@@ -12,15 +12,29 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
 
 </head>
-<body class="principal">
+<body class="principal" >
     <header class="header">
         <div class="header__img"></div>
         <h1 class="header header__h1">Pedra Papel Tesoura</h1>
     </header>
     <main class="main">
-        <section class="main__game">
-            <hr>
+        <section class="boasVindas" id="boasVindas">
+            <div class="boasVindas__header">
+                <h2 class="boasVindas__h2">Seja vem vindo!</h2>
+                <h4 class="boasVindas__h4" id="boasVindas__h4">"Para jogar, informe seu nome abaixo."</h4>
+            </div>
+            <div class="boasVindas__Dados" id="boasVindas__Dados">
+                <form id="formName">
+                    <input type="text" name="playerName" id="playerName" class="playerName">
+                    <input type="button" value="OK" class="btnConfirm" id="btnConfirm"></input>
+                    <input type="reset" value="Cancelar" class="btnCancel"></input>
+                </form>    
+            </div>
+        </section>
+        <hr class="topHR" id="topHr">
+        <section class="main__game" id="main__game">
             <div class="divHuman">
+                <hr class="middleHr">
                 <div class="divHuman__header">
                     <h3 class="divHuman__h3" id="human__h3">Escolha uma opção abaixo :</h3>
                 </div>
@@ -30,28 +44,31 @@
                     <div class="containerImagens containerImagens__tesoura" id="Tesoura"></div>
                 </div>
             </div>
-            <hr>
             <div class="divMachine" id="divMachine">
+                <hr  class="middleHr">
                 <div class ="divMachine__header">
                     <h3 class="divMachine__h3" id="divMachine__h3"></h3>
                 </div>
                 <div class="containerImagensMac" id="ctnImgMac">
                 </div>
             </div>
+            <div class="divResult">
+                <div class="main__winner">
+                    <hr class="middleHr">
+                    <hr class="topHR" id=bottHr>
+                    <h3 class="winner__h3" id="currentWinner"></h3>
+                    <button class="btnReset" id="resetGame" disabled>Jogar Novamente</button>
+                </div>
+                <div class="main__playerX">
+                    <h4 id="jogadorX"></h4>
+                    <p id="countPlayerX"></p>
+                </div>
+                <div class="main__playerMachine">
+                    <h4>Vitórias: Máquina</h4>
+                    <p id="countMachine"></p>
+                </div>
+            </div>
         </section>
-        <div class="main__winner">
-            <hr>
-            <h3 class="winner__h3" id="currentWinner"></h3>
-            <button class="btnReset" id="resetGame" disabled>Jogar Novamente</button>
-        </div>
-        <div class="main__playerX">
-            <h4 id="jogadorX"></h4>
-            <p id="countPlayerX"></p>
-        </div>
-        <div class="main__playerMachine">
-            <h4>Vitórias: Máquina</h4>
-            <p id="countMachine"></p>
-        </div>
     </main>
     <script src="./assets/script/script.js"></script>    
 </body>

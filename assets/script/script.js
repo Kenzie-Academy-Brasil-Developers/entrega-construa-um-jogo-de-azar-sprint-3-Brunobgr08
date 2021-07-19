@@ -1,11 +1,19 @@
-let player = document.getElementById("jogadorX");
-let jogador = prompt("Para jogar, informe seu nome: ");
+//let player = document.getElementById("jogadorX");
+let jogador;
 let imgSel; 
 let humanSelection;
 let machineSelection;
 let winsPlayer = 0;
 let winsMachine = 0;
 
+
+let boasVindas = document.getElementById('boasVindas');
+let main__game = document.getElementById('main__game');
+let formName = document.getElementById('formName');
+let nomeJogador = document.querySelector('#playerName');
+let h4Welcome = document.getElementById('boasVindas__h4');
+let btnConfirm = document.getElementById('btnConfirm');
+let btnCancel = document.getElementById('btnCancel');
 let container_pedra = document.getElementById('Pedra');
 let container_papel = document.getElementById('Papel');
 let container_tesoura = document.getElementById('Tesoura');
@@ -14,20 +22,29 @@ let divMachine = document.getElementById('divMachine');
 let machine__h3 = document.getElementById('divMachine__h3');
 let containerImgMachine = document.getElementById('ctnImgMac');
 let currentWinner = document.getElementById('currentWinner');
+let player = document.getElementById('jogadorX');
 let countPlayer = document.getElementById('countPlayerX');
 let countMachine = document.getElementById('countMachine');
 let botaoReset = document.getElementById('resetGame');
+let topHr = document.getElementById('topHr');
+let bottHr = document.getElementById('bottHr');
 
 const valorSel = document.querySelectorAll('div#containerImagens div');
 
+btnConfirm.addEventListener('click', function(e){
+    jogador = nomeJogador.value;
+    if ( jogador == null || jogador ==""){
+        h4Welcome.innerText = "É necessário informar o nome para jogar!";
+        nomeJogador.focus();
+    } else {
+        player.innerText = "Vitórias: "+ jogador;
+        boasVindas.classList.add("hidden");
+        main__game.classList.add("show");
+        topHr.classList.add("showHR");
+        bottHr.classList.add("showHR");
+    }
 
-if ( jogador == null || jogador ==""){
-    alert("É necessário informar o nome para jogar!");
-    document.location.reload();
-} else {
-    alert("Bem vindo(a), " + jogador +  "!");
-    player.innerText = "Vitórias: "+ jogador;
-}
+});
 
 const eventoClick = function(event){
 
@@ -71,21 +88,22 @@ function randomMachine(){
 
     machineSelection = Math.floor((Math.random() * 3) + 1);
 
-    divMachine.style.display = "flex";
+    machine__h3.style.display ="flex";
     machine__h3.innerText = "O computador está jogando..."
     machine__h3.classList.add("divHuman__h3__pulse");
+    containerImgMachine.style.display = "flex";
 
     setTimeout(function(){
         if (machineSelection === 1){
-            containerImgMachine.style.backgroundImage = "url('../assets/img/pedra.png')"; 
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/pedra.png")'; 
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Pedra";
         }else if (machineSelection===2){
-            containerImgMachine.style.backgroundImage = 'url("../assets/img/papel.png")';
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/papel.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Papel";
         }else if (machineSelection===3){
-            containerImgMachine.style.backgroundImage = 'url("../assets/img/tesoura.png")';
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/tesoura.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Tesoura";
         }
@@ -122,9 +140,9 @@ function jogarNovamente(){
     container_tesoura.classList.remove("focusImg");
     container_tesoura.classList.remove("hiddenImg");
 
-
     containerImgMachine.style.backgroundImage = "url('../assets/img/gifPedraPapelTesoura.gif')";
-    divMachine.style.display = 'none';
+    machine__h3.style.display ="none";
+    containerImgMachine.style.display = "none";
     currentWinner.innerText = '';
 
     human__h3.innerText = 'Escolha uma opção abaixo :';
