@@ -1,3 +1,13 @@
+@-webkit-keyframes pulse{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
 .principal{
     background-color: #f9b752;
     /* background-image: url("../img/zyro-image50op.png"); */
@@ -7,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Open Sans Condensed', sans-serif;
   }
   .header{
     width: 100%;
@@ -15,7 +26,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .header__img{
     background-image: url("../img/ezgif.com-gif-maker.gif");
@@ -27,7 +38,8 @@
   .header__h1{
     margin: 0 auto;
     height: 40px;
-    font-size: 2em;
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 1.7em;
     font-weight: 700;
   }
   hr{
@@ -35,15 +47,14 @@
   }
   .main{
     width: 320px; 
-    height: 450px; 
+    height: 440px; 
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
   }
   .main__game{
-    height: 280px;
+    height: 290px;
     width: 300px;
   }
   .divHuman{
@@ -53,7 +64,7 @@
     align-items: center;
   }
   .divHuman__header{
-    height: 30px;
+    height: 25px;
   }
   .divHuman__h3{
     font-weight: 500;
@@ -61,7 +72,7 @@
   .containerImagens{
     width: 300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
   .containerImagens__pedra, .containerImagens__papel, .containerImagens__tesoura{
     width: 90px;
@@ -70,6 +81,8 @@
     border-radius: 25%;
     background-repeat: no-repeat;
     background-position:center;
+    margin-left: 2px;
+    margin-right: 2px;
   }
   .containerImagens__pedra:hover, .containerImagens__papel:hover, .containerImagens__tesoura:hover{
     cursor: pointer;
@@ -89,33 +102,46 @@
     background-image: url("../img/tesoura.png");
     background-size: 90%;
   }
+  .hiddenImg{
+    display: none;
+  }
+  .focusImg{
+    background-color: #ffa61f;
+    border: solid 1.8px #383838;
+  }
   .divMachine{
     display:none;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    height: 150px;
+    height: 130px;
   }
   .divMachine__header{
-    height: 30px;
+    height: 25px;
     display: flex;
     align-items: center;
   }
   .divMachine__h3{
-    font-weight: 500;
+    font-weight: 500;  
+  }
+  .divHuman__h3__pulse{
+    animation: pulse 0.8s infinite alternate;
   }
   .containerImagensMac{
-    width: 300px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     display: flex;
     justify-content: center;
+    border: solid 1.8px #383838;
+    border-radius: 25%;
+    background-color: #ffa61f;
     background-image: url("../img/gifPedraPapelTesoura.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
   .main__winner{
-    width: 300px;
+      width: 300px;
       height: 75px;
       display: flex;
       flex-direction: column;
@@ -123,15 +149,30 @@
   }
   .winner__h3{
     height: 30px;
+    font-size: 1em;
   }
   .btnReset{
     background-color: #ffa61f;
     border: solid 1px rgb(73, 73, 73);
-    cursor: pointer;
+    border-radius: 5px;
     color: rgb(73, 73, 73);
     padding: 4px 8px;
+    font-size: 0.9em;
   }
   .main__playerX, .main__playerMachine{
+    width: 138px;
     height: 30px;
-    padding-top: 10px;
+    margin: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px #929292;
+    color: #414141;
+    font-size: 0.9em;
   }
+
+  @media screen and (min-width: 768px){
+    
+
+  }
+  @media screen and (min-width: 1024px){} 
