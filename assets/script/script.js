@@ -40,16 +40,19 @@ const eventoClick = function(event){
         container_papel.classList.add("hiddenImg");
         container_tesoura.classList.add("hiddenImg");
         humanSelection = 1;
+        imgSel.removeEventListener('click', eventoClick);
     }else if (imgSel.id === "Papel"){
         container_papel.classList.add("focusImg");
         container_pedra.classList.add("hiddenImg");
         container_tesoura.classList.add("hiddenImg");
         humanSelection = 2;
+        imgSel.removeEventListener('click', eventoClick);
     }else if(imgSel.id === "Tesoura"){
         container_tesoura.classList.add("focusImg");
         container_pedra.classList.add("hiddenImg");
         container_papel.classList.add("hiddenImg");
         humanSelection = 3;
+        imgSel.removeEventListener('click', eventoClick);
     }
 
     randomMachine();
@@ -119,9 +122,15 @@ function jogarNovamente(){
     container_tesoura.classList.remove("focusImg");
     container_tesoura.classList.remove("hiddenImg");
 
+
     containerImgMachine.style.backgroundImage = "url('../assets/img/gifPedraPapelTesoura.gif')";
     divMachine.style.display = 'none';
     currentWinner.innerText = '';
+
+    human__h3.innerText = 'Escolha uma opção abaixo :';
+
+    imgSel.addEventListener('click', eventoClick);
+    
 }
 
 function mostrarVitorias(){
