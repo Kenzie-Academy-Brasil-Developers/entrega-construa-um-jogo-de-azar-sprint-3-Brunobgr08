@@ -183,10 +183,8 @@
     justify-content: center;
     border: solid 1.8px #383838;
     border-radius: 25%;
-  }
-  .containerImagensMacBGGif{
-    background-image: url("../img/gifPedraPapelTesoura.gif");
     background-color: #ffa61f;
+    background-image: url("../img/gifPedraPapelTesoura.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
