@@ -1,4 +1,3 @@
-//let player = document.getElementById("jogadorX");
 let jogador;
 let imgSel;
 let humanSelection;
@@ -98,11 +97,11 @@ function randomMachine(){
             containerImgMachine.style.backgroundImage = 'url("./assets/img/pedra.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Pedra";
-        }else if (machineSelection === 2){
+        }else if (machineSelection===2){
             containerImgMachine.style.backgroundImage = 'url("./assets/img/papel.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Papel";
-        }else if (machineSelection === 3){
+        }else if (machineSelection===3){
             containerImgMachine.style.backgroundImage = 'url("./assets/img/tesoura.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Tesoura";
