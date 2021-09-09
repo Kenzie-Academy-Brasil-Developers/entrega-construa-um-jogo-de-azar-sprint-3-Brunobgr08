@@ -1,6 +1,6 @@
 //let player = document.getElementById("jogadorX");
 let jogador;
-let imgSel; 
+let imgSel;
 let humanSelection;
 let machineSelection;
 let winsPlayer = 0;
@@ -49,7 +49,7 @@ btnConfirm.addEventListener('click', function(e){
 const eventoClick = function(event){
 
     imgSel = event.target;
-    
+
     human__h3.innerHTML = "Você escolheu: "+ imgSel.id;
 
     if (imgSel.id === "Pedra"){
@@ -88,22 +88,24 @@ function randomMachine(){
 
     machineSelection = Math.floor((Math.random() * 3) + 1);
 
+    containerImgMachine.style.backgroundImage = "url('../assets/img/gifPedraPapelTesoura.gif')";
     machine__h3.style.display ="flex";
     machine__h3.innerText = "O computador está jogando..."
     machine__h3.classList.add("divHuman__h3__pulse");
     containerImgMachine.style.display = "flex";
 
     setTimeout(function(){
+
         if (machineSelection === 1){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/pedra.png")'; 
+            containerImgMachine.style.backgroundImage = "url('../assets/img/pedra.png')";
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Pedra";
         }else if (machineSelection===2){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/papel.png")';
+            containerImgMachine.style.backgroundImage = "url('../assets/img/papel.png')";
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Papel";
         }else if (machineSelection===3){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/tesoura.png")';
+            containerImgMachine.style.backgroundImage = "url('../assets/img/tesoura.png')";
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Tesoura";
         }
@@ -128,11 +130,11 @@ function checarVencedor(valorHuman, valorMachine){
         currentWinner.innerText = "Você ganhou!!";
         winsPlayer++;
     }
-    mostrarVitorias();  
+    mostrarVitorias();
 }
 
 function jogarNovamente(){
-    
+
     container_papel.classList.remove("focusImg");
     container_papel.classList.remove("hiddenImg");
     container_pedra.classList.remove("focusImg");
@@ -148,11 +150,10 @@ function jogarNovamente(){
     human__h3.innerText = 'Escolha uma opção abaixo :';
 
     imgSel.addEventListener('click', eventoClick);
-    
+
 }
 
 function mostrarVitorias(){
     countPlayer.innerText = winsPlayer;
     countMachine.innerText = winsMachine;
 }
-
