@@ -88,24 +88,22 @@ function randomMachine(){
 
     machineSelection = Math.floor((Math.random() * 3) + 1);
 
-    containerImgMachine.style.backgroundImage = "url('../img/gifPedraPapelTesoura.gif')";
     machine__h3.style.display ="flex";
     machine__h3.innerText = "O computador está jogando..."
     machine__h3.classList.add("divHuman__h3__pulse");
     containerImgMachine.style.display = "flex";
 
     setTimeout(function(){
-
         if (machineSelection === 1){
-            containerImgMachine.style.backgroundImage = "url('../img/pedra.png')";
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/pedra.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Pedra";
-        }else if (machineSelection===2){
-            containerImgMachine.style.backgroundImage = "url('../img/papel.png')";
+        }else if (machineSelection === 2){
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/papel.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Papel";
-        }else if (machineSelection===3){
-            containerImgMachine.style.backgroundImage = "url('../img/tesoura.png')";
+        }else if (machineSelection === 3){
+            containerImgMachine.style.backgroundImage = 'url("./assets/img/tesoura.png")';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Tesoura";
         }
