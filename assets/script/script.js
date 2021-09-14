@@ -1,32 +1,38 @@
-let jogador;
-let imgSel;
-let humanSelection;
-let machineSelection;
-let winsPlayer = 0;
-let winsMachine = 0;
+let jogador,
+    imgSel,
+    humanSelection,
+    machineSelection,
+    winsPlayer = 0,
+    winsMachine = 0,
+    interval,
+    timeInterval = 500,
+    timeStopAuto = 6000,
+    currentBGIndex = 0,
+    classBG = ['bgImage__pedra', 'bgImage__papel', 'bgImage__tesoura']
+    max = classBG.length;
 
 
-let boasVindas = document.getElementById('boasVindas');
-let main__game = document.getElementById('main__game');
-let formName = document.getElementById('formName');
-let nomeJogador = document.querySelector('#playerName');
-let h4Welcome = document.getElementById('boasVindas__h4');
-let btnConfirm = document.getElementById('btnConfirm');
-let btnCancel = document.getElementById('btnCancel');
-let container_pedra = document.getElementById('Pedra');
-let container_papel = document.getElementById('Papel');
-let container_tesoura = document.getElementById('Tesoura');
-let human__h3 = document.getElementById('human__h3');
-let divMachine = document.getElementById('divMachine');
-let machine__h3 = document.getElementById('divMachine__h3');
-let containerImgMachine = document.getElementById('ctnImgMac');
-let currentWinner = document.getElementById('currentWinner');
-let player = document.getElementById('jogadorX');
-let countPlayer = document.getElementById('countPlayerX');
-let countMachine = document.getElementById('countMachine');
-let botaoReset = document.getElementById('resetGame');
-let topHr = document.getElementById('topHr');
-let bottHr = document.getElementById('bottHr');
+const boasVindas = document.getElementById('boasVindas');
+const main__game = document.getElementById('main__game');
+const formName = document.getElementById('formName');
+const nomeJogador = document.querySelector('#playerName');
+const h4Welcome = document.getElementById('boasVindas__h4');
+const btnConfirm = document.getElementById('btnConfirm');
+const btnCancel = document.getElementById('btnCancel');
+const container_pedra = document.getElementById('Pedra');
+const container_papel = document.getElementById('Papel');
+const container_tesoura = document.getElementById('Tesoura');
+const human__h3 = document.getElementById('human__h3');
+const divMachine = document.getElementById('divMachine');
+const machine__h3 = document.getElementById('divMachine__h3');
+const containerImgMachine = document.getElementById('ctnImgMac');
+const currentWinner = document.getElementById('currentWinner');
+const player = document.getElementById('jogadorX');
+const countPlayer = document.getElementById('countPlayerX');
+const countMachine = document.getElementById('countMachine');
+const botaoReset = document.getElementById('resetGame');
+const topHr = document.getElementById('topHr');
+const bottHr = document.getElementById('bottHr');
 
 const valorSel = document.querySelectorAll('div#containerImagens div');
 
@@ -91,18 +97,20 @@ function randomMachine(){
     machine__h3.innerText = "O computador está jogando..."
     machine__h3.classList.add("divHuman__h3__pulse");
     containerImgMachine.style.display = "flex";
+    startBG();
 
     setTimeout(function(){
+        stopBGInterval();
         if (machineSelection === 1){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/pedra.png")';
+            containerImgMachine.className = 'containerImagensMac bgImage__pedra';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Pedra";
         }else if (machineSelection===2){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/papel.png")';
+            containerImgMachine.className = 'containerImagensMac bgImage__papel';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Papel";
         }else if (machineSelection===3){
-            containerImgMachine.style.backgroundImage = 'url("./assets/img/tesoura.png")';
+            containerImgMachine.className = 'containerImagensMac bgImage__tesoura';
             machine__h3.classList.remove("divHuman__h3__pulse");
             machine__h3.innerText = "A máquina escolheu: Tesoura";
         }
@@ -139,7 +147,6 @@ function jogarNovamente(){
     container_tesoura.classList.remove("focusImg");
     container_tesoura.classList.remove("hiddenImg");
 
-    containerImgMachine.style.backgroundImage = "url('../assets/img/gifPedraPapelTesoura.gif')";
     machine__h3.style.display ="none";
     containerImgMachine.style.display = "none";
     currentWinner.innerText = '';
@@ -153,4 +160,25 @@ function jogarNovamente(){
 function mostrarVitorias(){
     countPlayer.innerText = winsPlayer;
     countMachine.innerText = winsMachine;
+}
+
+function replaceBG() {
+
+    containerImgMachine.className = 'containerImagensMac';
+    containerImgMachine.classList.add(classBG[currentBGIndex]);
+
+    currentBGIndex++;
+
+    if(currentBGIndex >= max){
+        currentBGIndex = 0;
+    }
+}
+let startBG = () => {
+    interval = setInterval(() => {
+        replaceBG()
+    }, timeInterval);
+}
+
+let stopBGInterval = () => {
+    clearInterval(interval);
 }
