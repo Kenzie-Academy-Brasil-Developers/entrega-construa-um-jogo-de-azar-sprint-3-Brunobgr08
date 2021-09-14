@@ -184,10 +184,18 @@
     border: solid 1.8px #383838;
     border-radius: 25%;
     background-color: #ffa61f;
-    background-image: url("../img/gifPedraPapelTesoura.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .bgImage__pedra{
+    background-image: url("../img/pedra.png");
+  }
+  .bgImage__papel{
+    background-image: url("../img/papel.png");
+  }
+  .bgImage__tesoura{
+    background-image: url("../img/tesoura.png");
   }
   .divResult{
     display: flex;
