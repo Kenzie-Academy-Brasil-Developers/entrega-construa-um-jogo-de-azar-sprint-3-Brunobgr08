@@ -1,0 +1,429 @@
+@-webkit-keyframes pulse{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+.principal{
+    background-color: #f9b752;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+  .header{
+    width: 100%;
+    height: 135px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .header__img{
+    background-image: url("../img/PedraPapelTesouraTop.gif");
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    width: 100%;
+  }
+  .header__h1{
+    margin: 0 auto;
+    height: 40px;
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 1.7em;
+    font-weight: 700;
+  }
+  .middleHr{
+    width: 100%;
+  }
+  .topHR{
+    display: none;
+  }
+  .main{
+    width: 320px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .boasVindas{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 75%;
+    height: 350px;
+  }
+  .boasVindas__header{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .boasVindas__h2{
+    font-weight: 700;
+  }
+  .boasVindas__h4{
+    font-style: italic;
+  }
+  .boasVindas__Dados{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  .playerName{
+    width: 235px;
+    height: 35px;
+    margin: 20px 0 10px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .btnConfirm, .btnCancel{
+    width: 70px;
+    height: 30px;
+
+    font-size: 1em;
+  }
+  .btnConfirm{
+    margin-right: 100px;
+  }
+  .main__game{
+    height: 450px;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .divHuman{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .divHuman__header{
+    height: 25px;
+  }
+  .divHuman__h3{
+    font-weight: 500;
+  }
+  .containerImagens{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  .containerImagens__pedra, .containerImagens__papel, .containerImagens__tesoura{
+    width: 90px;
+    height: 90px;
+    border: solid 1.5px #626262;
+    border-radius: 25%;
+    background-repeat: no-repeat;
+    background-position:center;
+    margin-left: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+  }
+  .containerImagens__pedra:hover, .containerImagens__papel:hover, .containerImagens__tesoura:hover{
+    background-color: #ffa61f;
+  }
+  .containerImagens__pedra{
+    background-image: url("../img/pedra.png");
+    background-size:88px;
+
+  }
+  .containerImagens__papel{
+    background-image: url("../img/papel.png");
+    background-size: 80%;
+
+  }
+  .containerImagens__tesoura{
+    background-image: url("../img/tesoura.png");
+    background-size: 90%;
+  }
+  .hiddenImg{
+    display: none;
+  }
+  .focusImg{
+    background-color: #ffa61f;
+    border: solid 1.8px #383838;
+    cursor: not-allowed;
+  }
+  .divMachine{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 150px;
+  }
+  .divMachine__header{
+    height: 43px;
+    display: flex;
+    align-items: center;
+  }
+  .divMachine__h3{
+    font-weight: 500;
+    display: none;
+  }
+  .divHuman__h3__pulse{
+    animation: pulse 0.8s infinite alternate;
+  }
+  .containerImagensMac{
+    width: 90px;
+    height: 90px;
+    display: none;
+    justify-content: center;
+    border: solid 1.8px #383838;
+    border-radius: 25%;
+    background-color: #ffa61f;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .bgImage__pedra{
+    background-image: url("../img/pedra.png");
+  }
+  .bgImage__papel{
+    background-image: url("../img/papel.png");
+  }
+  .bgImage__tesoura{
+    background-image: url("../img/tesoura.png");
+  }
+  .divResult{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .main__winner{
+      width: 300px;
+      height: 75px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .winner__h3{
+    height: 30px;
+    font-size: 1em;
+  }
+  .btnReset{
+    background-color: #ffa61f;
+    border: solid 1px rgb(73, 73, 73);
+    border-radius: 5px;
+    color: rgb(73, 73, 73);
+    padding: 4px 8px;
+    font-size: 0.9em;
+  }
+  .main__playerX, .main__playerMachine{
+    width: 138px;
+    height: 30px;
+    margin: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px #929292;
+    color: #414141;
+    font-size: 0.9em;
+  }
+  .show{
+    display: flex;
+  }
+  .hidden{
+    display: none;
+  }
+
+  @media screen and (min-width: 768px){
+    .header{
+      height: 150px;
+      margin-bottom: 15px;
+    }
+    .header__img{
+      background-size: 100% 130%;
+      background-position:bottom;
+    }
+    .header__h1{
+      height: 40px;
+      font-size: 2.2em;
+    }
+    .middleHr{
+      width: 740px;
+    }
+    .main{
+      width: 750px;
+      height: 420px;
+    }
+    .playerName{
+      margin-right: 200px;
+    }
+    .main__game{
+      height: 420px;
+      width: 740px;
+    }
+    .containerImagens{
+      width: 500px;
+    }
+    .divMachine__header{
+      height: 43px;
+    }
+    .containerImagens__pedra, .containerImagens__papel, .containerImagens__tesoura{
+      width: 90px;
+      height: 90px;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+    .divResult{
+      justify-content: space-evenly;
+    }
+    .main__winner{
+      width: 740px;
+    }
+    .winner__h3{
+      font-size: 1.2em;
+    }
+    .main__playerX, .main__playerMachine{
+      width: 250px;
+    }
+    .btnReset{
+      padding: 6px 12px;
+      font-size: 1.1em;
+    }
+
+  }
+  @media screen and (min-width: 1024px){
+    .header{
+      height: 250px;
+      margin-bottom: 5px;
+    }
+    .header__img{
+      background-size: 100% 130%;
+      background-position:bottom;
+      height: 180px;
+    }
+    .header__h1{
+      height: 60px;
+      font-size: 3.4em;
+    }
+    .middleHr{
+      width: 100%;
+      display: none;
+    }
+    .topHR{
+      width: 100%;
+    }
+    .main{
+      width: 100%;
+      height: 430px;
+      align-content: flex-start;
+    }
+    .boasVindas__header{
+      height: 90px;
+    }
+    .boasVindas__h2{
+      font-weight: 700;
+      font-size: 1.7em;
+    }
+    .boasVindas__h4{
+      font-style: italic;
+      font-size: 1.4em;
+    }
+    .playerName{
+      width: 350px;
+      margin-right: 50%;
+    }
+    .btnConfirm{
+      margin-right: 215px;
+    }
+    .main__game{
+      height: 250px;
+      width: 99.5%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .divHuman{
+      height: 240px;
+      width: 50%;
+      justify-content: center;
+    }
+    .divHuman__header{
+      width: 300px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .divHuman__h3{
+      font-size: 1.5em;
+    }
+    .divMachine{
+      height: 240px;
+      width: 50%;
+      justify-content: center;
+    }
+    .divMachine__header{
+      width: 300px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .divMachine__h3{
+      font-size: 1.5em;
+    }
+    .containerImagens{
+      width: 400px;
+      height: 140px;
+    }
+    .containerImagens__pedra, .containerImagens__papel, .containerImagens__tesoura{
+      width: 120px;
+      height: 120px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .containerImagensMac{
+      width: 120px;
+      height: 120px;
+    }
+    .divResult{
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    .main__winner{
+      width: 100%;
+      height: 95px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .winner__h3{
+      font-size: 1.7em;
+      font-weight: 600;
+      height: 50px;
+    }
+    .main__playerX, .main__playerMachine{
+      width: 400px;
+      height: 55px;
+      font-size: 1.4em;
+      justify-content: space-between;
+      margin: 0 25px;
+      padding: 0;
+    }
+    .btnReset{
+      padding: 10px 40px;
+      font-size: 1.3em;
+    }
+    .showHR{
+      display: flex;
+    }
+    .hiddenHR{
+      display: none;
+    }
+  }
